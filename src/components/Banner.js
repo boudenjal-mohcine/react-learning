@@ -21,6 +21,8 @@ import logo from '../assets/logo.png'
  * 
  * ***/
 
+
+
 function Banner() {
 
     const title ='La maison de jungle'
@@ -28,6 +30,7 @@ function Banner() {
     <div className='lmj-banner'>
         <img src={logo} className='lmj-logo' alt='La maison jungle'/>
         <h1 className='lmj-title'>{title}</h1>
+
     </div>);
 }
 
