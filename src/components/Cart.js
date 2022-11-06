@@ -19,6 +19,8 @@ function Cart({ cart, updateCart}) {
 	// 	alert(`Filtre : ${filtre}`)
 	// },[activeCategory])
 
+
+
 	return isOpen ? (
 		<div className='lmj-cart'>
 			<button
@@ -34,6 +36,7 @@ function Cart({ cart, updateCart}) {
 						{cart.map(({ name, price, amount }, index) => (
 							<div key={`${name}-${index}`}>
 								{name} {price}€ x {amount}
+								{/* <span><p className='deleteCart' onClick={()=>updateCart([cart.filter((elem,index) => elem.name+'-'+index === `${name}-${index}`)])}>X</p></span> */}
 							</div>
 						))}
 						</ul>
