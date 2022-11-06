@@ -1,12 +1,24 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import '../styles/Cart.css'
 
-function Cart({ cart, updateCart }) {
+function Cart({ cart, updateCart}) {
 	const [isOpen, setIsOpen] = useState(true)
+
+
 	const total = cart.reduce(
-		(acc, plantType) => acc + plantType.amount * plantType.price,
-		0
+		(acc, plantType) => acc + plantType.amount * plantType.price,0
 	)
+			
+	useEffect(() => {
+		document.title = `LMJ: ${total}€ d'achats`
+	}, [total])
+
+
+	// useEffect(() => {
+	// 	var filtre = (activeCategory===''?'All':activeCategory)
+	// 	alert(`Filtre : ${filtre}`)
+	// },[activeCategory])
+
 	return isOpen ? (
 		<div className='lmj-cart'>
 			<button
@@ -24,7 +36,7 @@ function Cart({ cart, updateCart }) {
 								{name} {price}€ x {amount}
 							</div>
 						))}
-					</ul>
+						</ul>
 					<h3>Total :{total}€</h3>
 					<button onClick={() => updateCart([])}>Vider le panier</button>
 				</div>
