@@ -20,7 +20,7 @@ function App() {
           <Cart cart={cart} updateCart={updateCart} />
           <ShoppingList cart={cart} updateCart={updateCart} />
 		  </div>
-			<Footer />
+		  <Footer />
 		</div>
   );
 }
